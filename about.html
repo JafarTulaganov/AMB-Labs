@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ABM Lab</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav inner__nav" id="navbar">
+        <div class="container">
+          <div class="nav__top">
+            <div class="nav__brand">
+              <a href="index.html">
+                <img src="./img/logo/Group 4.svg" class="nav__pic" alt="" />
+              </a>
+            </div>
+            <div class="nav__info">
+              <div class="nav__num">
+                <a href="tel:+99888900-3-009"
+                  ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+                >
+              </div>
+              <div class="nav__reg">
+                <button class="nav__btn"><p>Регистрироваться</p></button>
+              </div>
+            </div>
+          </div>
+          <div class="nav__bottom">
+            <div class="nav__links">
+              <ul>
+                <li>
+                  <a href="index.html" class="nav__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="products.html" class="nav__link"> Оборудование </a>
+                </li>
+                <li class="drop-btn rotater">
+                  <a href="materials.html" class="nav__link">
+                    Расходные материалы <i class="bx bx-chevron-down"></i>
+                  </a>
+                  <div class="dropdown next__lang" id="drop">
+                    <a href="#" class="drop__link">
+                      Анализ кислорода, азота и водорода
+                    </a>
+                    <a href="#" class="drop__link"> Анализ углерода и серы </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="contacts.html" class="nav__link"> Контакты </a>
+                </li>
+                <li class="drop-btn">
+                  <a href="#" class="nav__link menu-icon">
+                    <i class="bx bx-menu"></i>
+                  </a>
+                  <div class="dropdown next__lang menu__drop" id="drop">
+                    <a href="#" class="drop__link"> Проекты </a>
+                    <a href="about.html" class="drop__link"> О нас </a>
+                    <a href="posts.html" class="drop__link"> Новости</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="nav__right">
+              <div class="nav__search">
+                <input id="search" type="text" placeholder="Поиск" />
+                <label class="search__label" for="search"
+                  ><i class="bx bx-search"></i
+                ></label>
+              </div>
+              <div class="nav__lang drop-btn rotater">
+                <p class="current__lang">
+                  Русский <i class="bx bx-chevron-down"></i>
+                </p>
+                <div class="next__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="mobile inner__mobile" id="mobile">
+        <div class="container">
+          <div class="mobile__top">
+            <div class="mobile__brand">
+              <a href="#">
+                <img src="./img/logo/Group 4.svg" alt="" />
+              </a>
+            </div>
+            <div class="mobile__right">
+              <div class="mobile__search">
+                <button class="mobile__search">
+                  <i class="bx bx-search"></i>
+                </button>
+              </div>
+              <div class="burger">
+                <button class="burger__btn" id="burger">
+                  <div class="stick"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile__bottom" id="bottom">
+          <div class="container">
+            <!-- <div class="mobile__reg">
+              <button class="nav__btn"><p>Регистрироваться</p></button>
+            </div>
+            <div class="mobile__links show-ul" id="active-ul">
+              <ul class="active__ul">
+                <li>
+                  <a href="#" class="mobile__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Оборудование </a>
+                </li>
+                <li>
+                  <button class="mobile__link" id="opener">
+                    Расходные материалы
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Контакты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Проекты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> О нас </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Новости </a>
+                </li>
+              </ul>
+              <ul class="hidden__ul hide-ul" id="hidden-ul">
+                <li>
+                  <button class="mobile__link" id="closer">
+                    <i class="bx bx-chevron-left"></i>
+                    Меню
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link">
+                    Анализ кислорода, азота и водорода
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Анализ углерода и серы </a>
+                </li>
+              </ul>
+            </div>
+            <div class="mobile__num nav__num">
+              <a href="tel:+99888900-3-009"
+                ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+              >
+            </div>
+            <div class="mobile__lang">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Ru</option>
+                <option value="2">Eng</option>
+              </select>
+            </div> -->
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main inner">
+      <section class="page__top">
+        <div class="container">
+          <h1 class="page__title">О нас</h1>
+          <div class="crumbs">
+            <a href="#" class="last__page">Главная</a>
+            <p>/</p>
+            <p class="this__page">О нас</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="about__body">
+        <div class="container">
+          <h2 class="about__title">
+            Как сделать раздел «О нас» интересным и полезным для клиентов
+          </h2>
+          <p class="about__txt">
+            При заполнении сайта разделу «О нас» зачастую не уделяют должного
+            внимания. Но если посетитель планирует заказать товар или услугу, он
+            почти всегда заходит на эту страницу. Не стоит его разочаровывать.
+            Разбираем, как сделать страницу полезной для пользователя, что на
+            ней должно быть и чего размещать не следует.
+          </p>
+          <p class="about__txt">
+            За десять лет с момента основания до настоящего времени мы накопили
+            опыт и продолжали расти, и мы успешно вошли в авангарде
+            отечественной промышленности
+          </p>
+          <div class="about__img mb-5">
+            <img src="./img/about.jpg" alt="" class="about__pic" />
+          </div>
+          <p class="about__txt">
+            За 20 лет работы портала мы разработали мощный интернет-ресурс,
+            имеющий более 2 млн. целевых пользователей в год. Участники рынка
+            оборудования имеют возможность оперативно узнавать необходимую
+            информацию, обмениваться ей в целях продвижения своего бизнеса.
+          </p>
+          <p class="about__txt">
+            В распоряжении наших пользователей актуальная база из 40 000
+            поставщиков и производителей, 120 000 тыс. единиц оборудования.
+          </p>
+          <p class="about__txt">
+            Целевая аудитория портала – руководители промышленных
+            предприятий/компаний/фирм, топ-менеджеры, руководители промышленных
+            подразделений/цехов/отделов, технические специалисты, маркетологи,
+            специалисты отделов продаж, представители СМИ.
+          </p>
+          <p class="about__txt">
+            Каталог оборудования — один из ключевых разделов портала
+            EquipNet.ru. Каталог разбит на тематические подразделы, в Рунете
+            больше нет аналогов такого подробного каталога промышленного
+            оборудования.
+          </p>
+          <p class="about__txt">
+            Наша площадка - крупнейший интернет-источник, объединяющий различную
+            информацию об оборудовании, производящемся и продающемся в России и
+            за рубежом. Публикация на портале equipnet.ru – универсальный способ
+            донести информацию до вашего круга потребителей.
+          </p>
+          <p class="about__txt">
+            Портал EquipNet.ru – это площадка, где сокращается расстояние между
+            производителем и потребителем и происходит взаимовыгодное
+            сотрудничество для обеих сторон сфер бизнеса – B2B и В2С.
+            Предприятиям и организациям дается отличная возможность выбрать
+            бизнес-партнера, оптимального поставщика либо покупателя, независимо
+            от его географического местонахождения. В любое время пользователь
+            может зайти на наш портал, узнать необходимую информацию и
+            разместить сведения о себе и своем продукте.
+          </p>
+          <p class="about__txt">
+            За время существования портала, мы изучили наиболее эффективные
+            способы продвижении товаров и услуг.
+          </p>
+          <p class="about__txt">
+            Мы рады принимать активное участие в продвижении вашего бизнеса!
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <section class="partners">
+      <div class="container">
+        <h4 class="section__title">
+          Нам доверяют <span class="pink__dot">.</span>
+        </h4>
+      </div>
+      <div class="swiper partnersSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/logo/part-1.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-2.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-3.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-4.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/aespa-black.png" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./img/logo/one-piece-black.png"
+              alt=""
+              class="part__pic"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/zara-black.png" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-3.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-4.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-5.svg" alt="" class="part__pic" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts">
+      <div class="container">
+        <h4 class="section__title">
+          Контакты <span class="pink__dot">.</span>
+        </h4>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.3726986152985!2d69.29586964692987!3d41.30510884295212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef52931cf0bd9%3A0x8ff00f47aa8c1e12!2z0KDQuNC80YHQutC-LdCa0LDRgtC-0LvQuNGH0LXRgdC60LjQuSDQpdGA0LDQvCDQodCy0Y_RgtC10LnRiNC10LPQviDQodC10YDQtNGG0LAg0JjQuNGB0YPRgdCw!5e0!3m2!1sru!2s!4v1659702295219!5m2!1sru!2s"
+            width="100%"
+            height="580"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="cont__bottom">
+          <div class="con__item">
+            <i class="bx bx-map"></i>
+            <p>100130, Узбекистан, г. Ташкент</p>
+          </div>
+          <div class="con__item">
+            <i class="bx bx-phone-call"></i>
+            <a href="tel:+998997777777">+998 99 777-77-77</a>
+          </div>
+          <div class="con__item">
+            <i class="bx bx-envelope"></i>
+            <a href="mailto:info@.com">info@.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="foot__grid">
+          <div class="foot__item">
+            <a href="#" class="foot__brand-link">
+              <img
+                src="./img/logo/brand-color.svg"
+                alt=""
+                class="foot__brand"
+              />
+            </a>
+
+            <div class="foot__socs">
+              <p>Мы в социальных сетях</p>
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot__info">
+              <p>Copyright © 2022</p>
+              <p>Все права защищены.</p>
+            </div>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Меню</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Проекты </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Оборудование </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Расходные материалы </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> О нас </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Новости </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Контакты </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Услуги</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Премьер-Альфа-Гидравлик </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бесшовная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба электросварная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба нержавеющая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба крекинговая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бурильная </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Контакты</p>
+            <div class="foot__con-item">
+              <i class="bx bx-map"></i>
+              <a href="">100130, Узбекистан, г. Ташкент</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-phone-call"></i>
+              <a href="tel:+998997777777">+998 99 777-77-77</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-envelope"></i>
+              <a href="mailto:info@gmail.com">info@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>

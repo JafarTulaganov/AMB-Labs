@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ABM Lab</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav" id="navbar">
+        <div class="container">
+          <div class="nav__top">
+            <div class="nav__brand">
+              <a href="index.html">
+                <img src="./img/logo/Group 4.svg" class="nav__pic" alt="" />
+              </a>
+            </div>
+            <div class="nav__info">
+              <div class="nav__num">
+                <a href="tel:+99888900-3-009"
+                  ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+                >
+              </div>
+              <div class="nav__cart">
+                <a href="cart.html" class="cart__link">
+                  <i class="bx bx-cart-alt"></i>
+                </a>
+                <p class="cart__num">23</p>
+              </div>
+              <div class="nav__reg">
+                <button class="nav__btn" id="reg-button">
+                  <p>Регистрироваться</p>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="nav__bottom">
+            <div class="nav__links">
+              <ul>
+                <li>
+                  <a href="index.html" class="nav__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="products.html" class="nav__link"> Оборудование </a>
+                </li>
+                <li class="drop-btn rotater">
+                  <a href="materials.html" class="nav__link">
+                    Расходные материалы <i class="bx bx-chevron-down"></i>
+                  </a>
+                  <div class="dropdown next__lang" id="drop">
+                    <a href="material.html" class="drop__link">
+                      Анализ кислорода, азота и водорода
+                    </a>
+                    <a href="#" class="drop__link"> Анализ углерода и серы </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="contacts.html" class="nav__link"> Контакты </a>
+                </li>
+                <li class="drop-btn">
+                  <a href="#" class="nav__link menu-icon">
+                    <i class="bx bx-menu"></i>
+                  </a>
+                  <div class="dropdown next__lang menu__drop" id="drop">
+                    <a href="profile.html" class="drop__link"> Профиль </a>
+                    <a href="about.html" class="drop__link"> О нас </a>
+                    <a href="posts.html" class="drop__link"> Новости</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="nav__right">
+              <div class="nav__search">
+                <input id="search" type="text" placeholder="Поиск" />
+                <label class="search__label" for="search"
+                  ><i class="bx bx-search"></i
+                ></label>
+              </div>
+              <div class="nav__lang drop-btn rotater">
+                <p class="current__lang">
+                  Русский <i class="bx bx-chevron-down"></i>
+                </p>
+                <div class="next__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="mobile" id="mobile">
+        <div class="container">
+          <div class="mobile__top">
+            <div class="mobile__brand">
+              <a href="index.html">
+                <img src="./img/logo/Group 4.svg" alt="" />
+              </a>
+            </div>
+            <div class="mobile__right">
+              <div class="mobile__search-wrap">
+                <button class="mobile__search" id="searcher">
+                  <i class="bx bx-search"></i>
+                </button>
+              </div>
+              <div class="burger">
+                <button class="burger__btn" id="burger">
+                  <div class="stick"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile__bottom" id="bottom">
+          <div class="mobile__wrapper">
+            <div class="mobile__header">
+              <div class="mobile__brand">
+                <a href="index.html">
+                  <img
+                    src="./img/logo/Group 4.svg"
+                    class="mobile__pic"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="mobile__x">
+                <button class="x__japan" id="x-japan">
+                  <i class="bx bx-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mobile__links">
+              <ul class="active__ul show-ul" id="active-ul">
+                <p class="ul__title">Меню</p>
+                <li>
+                  <a href="index.html" class="mobile__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="products.html" class="mobile__link">
+                    Оборудование
+                  </a>
+                </li>
+                <li>
+                  <button class="mobile__link" id="opener">
+                    Расходные материалы
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </li>
+                <li>
+                  <a href="contacts.html" class="mobile__link"> Контакты </a>
+                </li>
+                <li>
+                  <a href="profile.html" class="mobile__link"> Профиль </a>
+                </li>
+                <li>
+                  <a href="about.html" class="mobile__link"> О нас </a>
+                </li>
+                <li>
+                  <a href="posts.html" class="mobile__link"> Новости </a>
+                </li>
+              </ul>
+              <ul class="hidden__ul hide-ul" id="hidden-ul">
+                <li>
+                  <button class="mobile__link" id="closer">
+                    <i class="bx bx-chevron-left"></i>
+                    Меню
+                  </button>
+                </li>
+                <li>
+                  <a href="material.html" class="mobile__link">
+                    Анализ кислорода, азота и водорода
+                  </a>
+                </li>
+                <li>
+                  <a href="product.html" class="mobile__link">
+                    Анализ углерода и серы
+                  </a>
+                </li>
+              </ul>
+              <div class="mobile__langs">
+                <div class="mobile__lang mobile__lang-active">
+                  <a href="#"> Русский </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> O’zbekcha </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="second__wrapper">
+            <div class="mobile__reg">
+              <button id="mobile-reg-btn" class="nav__btn">
+                <p>Регистрироваться</p>
+              </button>
+            </div>
+            <div class="mobile__num nav__num">
+              <a href="tel:+99888900-3-009"
+                ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main" id="main">
+      <section class="home">
+        <div class="container">
+          <div class="home__content">
+            <h1 class="home__title">
+              Расходные материалы для газоанализа и не только!
+            </h1>
+            <div class="home__btns">
+              <button class="home__btn btn__colored" id="colored">
+                <p>
+                  Перейти в каталог <i class="bx bx-right-arrow-circle"></i>
+                </p>
+              </button>
+              <button class="home__btn btn__transparend">
+                <p>
+                  Перейти в каталог <i class="bx bx-right-arrow-circle"></i>
+                </p>
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-xs-12">
+              <p class="about__txt-left">
+                Мы являемся современной фабрикой, основанной в Шанхае, Китай,
+                специализирующейся на производстве и продаже форм для
+                таблеточного пресса, и стремимся поставлять высококачественные
+                формы для таблеточного пресса клиентам по всему миру.
+              </p>
+            </div>
+            <div class="col-md-6 col-xs-12">
+              <p class="about__txt-right">
+                У нас есть отличная техническая команда и передовые
+                производственные процессы, включая, помимо прочего, технологии
+                САПР, ЧПУ и резки проволоки.
+              </p>
+              <p class="about__txt-right">
+                За десять лет с момента основания до настоящего времени мы
+                накопили опыт и продолжали расти, и мы успешно вошли в авангарде
+                отечественной промышленности
+              </p>
+            </div>
+          </div>
+          <div
+            class="about__img"
+            data-aos="fade-up"
+            data-aos-anchor-placement="top-bottom"
+          >
+            <div class="about__btn">
+              <div class="about__wrap">
+                <a href="#"
+                  ><img src="./img/logo/arrow-right-circle.svg" alt="" /> О
+                  компании</a
+                >
+              </div>
+            </div>
+            <img src="./img/about.jpg" alt="" class="about__pic" />
+            <div class="link__wrapper">
+              <a href="#" class="about__link"></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="cards">
+        <div class="container">
+          <h4 class="cards__title">
+            С 1992 года мы помогаем компаниям продавать товары и развивать
+            бизнес с помощью наших сервисов
+          </h4>
+          <div class="cards__grid">
+            <div
+              class="cards__item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="200"
+            >
+              <img src="./img/logo/cube.svg" alt="" class="item__logo" />
+              <p class="item__txt">Разместить товары на торговой площадке</p>
+            </div>
+            <div
+              class="cards__item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="400"
+            >
+              <img src="./img/logo/cube.svg" alt="" class="item__logo" />
+              <p class="item__txt">Получить заказы в короткий срок</p>
+            </div>
+            <div
+              class="cards__item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="600"
+            >
+              <img src="./img/logo/cube.svg" alt="" class="item__logo" />
+              <p class="item__txt">Получить заказы в короткий срок</p>
+            </div>
+            <div
+              class="cards__item"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="800"
+            >
+              <img src="./img/logo/cube.svg" alt="" class="item__logo" />
+              <p class="item__txt">Получить заказы в короткий срок</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="products">
+        <div class="container">
+          <h4 class="section__title">
+            Каталог <span class="pink__dot">.</span>
+          </h4>
+          <div class="prod__header">
+            <p class="prod__header-txt">Type B Series Tablet Press Mould</p>
+          </div>
+          <div class="prod__grid">
+            <div class="prod__item">
+              <a href="#">
+                <div class="prod__img">
+                  <img src="./img/prod-1.png" alt="" class="prod__pic" />
+                </div>
+                <p class="prod__name">Премьер-Альфа-Гидравлик</p>
+              </a>
+            </div>
+            <div class="prod__item">
+              <a href="#">
+                <div class="prod__img">
+                  <img src="./img/prod-1.png" alt="" class="prod__pic" />
+                </div>
+                <p class="prod__name">Премьер-Альфа-Гидравлик</p>
+              </a>
+            </div>
+            <div class="prod__item">
+              <a href="#">
+                <div class="prod__img">
+                  <img src="./img/prod-2.png" alt="" class="prod__pic" />
+                </div>
+                <p class="prod__name">Премьер-Альфа-Гидравлик</p>
+              </a>
+            </div>
+            <div class="prod__item">
+              <a href="#">
+                <div class="prod__img">
+                  <img src="./img/prod-3.png" alt="" class="prod__pic" />
+                </div>
+                <p class="prod__name">Премьер-Альфа-Гидравлик</p>
+              </a>
+            </div>
+            <div class="prod__item">
+              <a href="#">
+                <div class="prod__img">
+                  <img src="./img/prod-4.png" alt="" class="prod__pic" />
+                </div>
+                <p class="prod__name">Премьер-Альфа-Гидравлик</p>
+              </a>
+            </div>
+          </div>
+          <div class="prod__button">
+            <button class="prod__btn"><p>Весь каталог</p></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="tags">
+        <div class="container">
+          <div class="tag__grid">
+            <div
+              class="tag__card"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="400"
+            >
+              <p class="tag__title">Оборудование</p>
+              <div class="tag__tags">
+                <div class="tag">
+                  <p>Премьер-Альфа-Гидравлик</p>
+                </div>
+                <div class="tag">
+                  <p>Труба бесшовная</p>
+                </div>
+                <div class="tag">
+                  <p>Труба электросварная</p>
+                </div>
+                <div class="tag">
+                  <p>Труба нержавеющая</p>
+                </div>
+              </div>
+              <div class="tag__img">
+                <img src="./img/tag-1.png" alt="" class="tag__pic" />
+              </div>
+            </div>
+            <div
+              class="tag__card"
+              data-aos="fade-up"
+              data-aos-anchor-placement="top-bottom"
+              data-aos-duration="600"
+            >
+              <p class="tag__title">Расходные материалы</p>
+              <div class="tag__tags">
+                <div class="tag">
+                  <p>Премьер-Альфа-Гидравлик</p>
+                </div>
+                <div class="tag">
+                  <p>Труба бесшовная</p>
+                </div>
+                <div class="tag">
+                  <p>Труба электросварная</p>
+                </div>
+                <div class="tag">
+                  <p>Труба нержавеющая</p>
+                </div>
+              </div>
+              <div class="tag__img">
+                <img src="./img/tag-2.png" alt="" class="tag__pic" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="partners">
+      <div class="container">
+        <h4 class="section__title">
+          Нам доверяют <span class="pink__dot">.</span>
+        </h4>
+      </div>
+      <div class="swiper partnersSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./img/logo/part-1.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-2.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-3.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-4.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/aespa-black.png" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img
+              src="./img/logo/one-piece-black.png"
+              alt=""
+              class="part__pic"
+            />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/zara-black.png" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-3.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-4.svg" alt="" class="part__pic" />
+          </div>
+          <div class="swiper-slide">
+            <img src="./img/logo/part-5.svg" alt="" class="part__pic" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contacts">
+      <div class="container">
+        <h4 class="section__title">
+          Контакты <span class="pink__dot">.</span>
+        </h4>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2000.3726986152985!2d69.29586964692987!3d41.30510884295212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38aef52931cf0bd9%3A0x8ff00f47aa8c1e12!2z0KDQuNC80YHQutC-LdCa0LDRgtC-0LvQuNGH0LXRgdC60LjQuSDQpdGA0LDQvCDQodCy0Y_RgtC10LnRiNC10LPQviDQodC10YDQtNGG0LAg0JjQuNGB0YPRgdCw!5e0!3m2!1sru!2s!4v1659702295219!5m2!1sru!2s"
+            width="100%"
+            height="580"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+        <div class="cont__bottom">
+          <div class="con__item">
+            <i class="bx bx-map"></i>
+            <p>100130, Узбекистан, г. Ташкент</p>
+          </div>
+          <div class="con__item">
+            <i class="bx bx-phone-call"></i>
+            <a href="tel:+998997777777">+998 99 777-77-77</a>
+          </div>
+          <div class="con__item">
+            <i class="bx bx-envelope"></i>
+            <a href="mailto:info@.com">info@.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="foot__grid">
+          <div class="foot__item">
+            <a href="#" class="foot__brand-link">
+              <img
+                src="./img/logo/brand-color.svg"
+                alt=""
+                class="foot__brand"
+              />
+            </a>
+
+            <div class="foot__socs">
+              <p>Мы в социальных сетях</p>
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot__info">
+              <p>Copyright © 2022</p>
+              <p>Все права защищены.</p>
+            </div>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Меню</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Проекты </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Оборудование </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Расходные материалы </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> О нас </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Новости </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Контакты </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Услуги</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Премьер-Альфа-Гидравлик </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бесшовная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба электросварная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба нержавеющая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба крекинговая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бурильная </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Контакты</p>
+            <div class="foot__con-item">
+              <i class="bx bx-map"></i>
+              <a href="">100130, Узбекистан, г. Ташкент</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-phone-call"></i>
+              <a href="tel:+998997777777">+998 99 777-77-77</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-envelope"></i>
+              <a href="mailto:info@gmail.com">info@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="search__body" id="search-body">
+      <div class="search__x mobile__x">
+        <button class="x__japan" id="x-search">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <div class="search__mid">
+        <div class="search__logo">
+          <img src="./img/logo/Group 4.svg" alt="" />
+        </div>
+        <div class="search__input-wrap">
+          <form>
+            <input type="text" class="search__inputter" />
+            <button class="searcher__btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="reg__modal" id="reg-modal">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Добро пожаловать в</h4>
+              <div class="reg__img">
+                <img src="./img/logo/Group 4.svg" alt="" class="reg__logo" />
+              </div>
+              <p class="reg__txt">
+                Заполните все необходимые поля для входа в аккаунт или
+                зарегистрируйте если его нет
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab" data-target="#login">
+                Логин
+              </button>
+              <p class="sticc">|</p>
+              <button class="reg__tabber" data-target="#registration">
+                Регистрация
+              </button>
+            </div>
+            <div class="reg__mid active__tab" id="login" data-content>
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="email" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="password" />
+                  <label
+                    alt="Введите Пароль"
+                    placeholder="Введите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="forget">
+                  <div id="forget-btn" class="forget__pass">Забыли пароль</div>
+                </div>
+                <button class="reg__btn">Логин</button>
+              </form>
+            </div>
+            <div class="reg__mid" id="registration" data-content>
+              <form>
+                <p class="form__info">Введите личный данные</p>
+                <div class="input__wrapper">
+                  <input required="" type="number" />
+                  <label alt="Имя" placeholder="Имя"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Фамилия" placeholder="Фамилия"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Отчество" placeholder="Отчество"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Пароль" placeholder="Пароль"></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="check__wrap">
+                  <input type="checkbox" id="check" />
+                  <label for="check"
+                    >Я согласен со всеми заявлениями об
+                    <a href="rules">условиях обслуживания</a></label
+                  >
+                </div>
+                <button class="reg__btn">Логин</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reg__modal reg__modal-forget" id="reg-modal-forget">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg-forget">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Вы забыли свой пароль?</h4>
+              <p class="reg__txt">
+                Введите адрес электронной почты, который вы используете для
+                своей учетной записи, ниже, и мы вышлем вам ссылку для сброса
+                пароля.
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab">Забыли пароль?</button>
+            </div>
+            <div class="reg__mid active__tab" id="login">
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <button class="reg__btn">Отправить</button>
+                <p class="return" id="return">
+                  Вернуться к <a href="#" class="purple">регистрации</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reg__modal reg__modal-forget reg__restore" id="">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg-forget">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Мы ждём вас!</h4>
+              <p class="reg__txt">
+                Заполните все необходимые поля для входа в аккаунт или
+                зарегистрируйте если его нет
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab">
+                Восстановить свой пароль
+              </button>
+            </div>
+            <div class="reg__mid active__tab" id="login">
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Введите Пароль"
+                    placeholder="Введите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Повторите Пароль"
+                    placeholder="Повторите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <button class="reg__btn">Восстановить пароль</button>
+                <p class="return" id="return">
+                  Вернуться к <a href="#" class="purple">регистрации</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+      AOS.init();
+    </script>
+  </body>
+</html>

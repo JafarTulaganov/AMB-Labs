@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ABM Lab</title>
+    <style>
+      .history__header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 0 24px 0;
+      }
+      .his__hed-txt {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        color: #9a999b;
+        margin-bottom: 8px;
+      }
+      .his__hed-txt strong {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #000;
+      }
+      .his__hed-btn {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 18px;
+        color: #03c04f;
+        background: transparent;
+        padding: 12px;
+        border: 2px dashed #03c04f;
+        border-radius: 2px;
+        width: 150px;
+      }
+      .his__hed-right {
+        display: flex;
+        align-items: center;
+        gap: 64px;
+      }
+      .his__hed-arrow {
+        background: transparent;
+        font-size: 32px;
+        color: #6e6e73;
+        transition: 0.3s;
+      }
+      .kurwa__title {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 24px;
+        padding: 0 0 1rem 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .his__prod {
+        padding: 8px 0 24px 0;
+        border-bottom: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 20% 50% 30%;
+        align-items: center;
+      }
+      .his__prod-pic {
+        width: 100%;
+        height: 150px;
+        object-fit: contain;
+      }
+      .his__prod-sup {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        color: #6e6e73;
+        margin-bottom: 0.5rem;
+      }
+      .his__prod-title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+      }
+      .his__prod-count {
+        display: flex;
+        justify-content: flex-end;
+      }
+      .goodboy {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18px;
+        text-align: center;
+        padding: 20px 54px;
+        border: 2px dashed var(--border);
+        color: #6e6e73;
+      }
+      .history__body {
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 24px 24px 0 24px;
+        margin-bottom: 24px;
+        overflow: hidden;
+      }
+      .history__body:last-child {
+        margin-bottom: 0;
+      }
+      .his__prod:last-child {
+        margin-bottom: 0;
+        border-bottom: none;
+      }
+      .his__hed-btn.waiting {
+        color: #ffc750;
+        border-color: #ffc750;
+      }
+      .his__hed-btn.reject {
+        color: #ff0000;
+        border-color: #ff0000;
+      }
+      .his__mid {
+        border-top: 1px solid var(--border);
+        padding-top: 16px;
+        display: none;
+      }
+      .his__mid.active {
+        display: block;
+      }
+      .history__header.active .his__hed-arrow {
+        transform: rotate(180deg);
+      }
+      @media screen and (max-width: 1024px) {
+        .inner {
+          padding-top: 60px;
+        }
+        .no__more {
+          gap: 2rem;
+        }
+        .his__hed-right {
+          gap: 1rem;
+        }
+        .goodboy {
+          padding: 10px 20px;
+        }
+        .his__prod-title {
+          font-size: 1rem;
+        }
+        .his__prod-sup {
+          font-size: 14px;
+          margin-bottom: 4px;
+        }
+      }
+      @media screen and (max-width: 500px) {
+        .history__header {
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+        .his__hed-right {
+          width: 100%;
+          justify-content: space-between;
+        }
+        .his__prod {
+          grid-template-columns: repeat(1, 1fr);
+          gap: 2rem;
+        }
+        .his__prod-count {
+          justify-content: center;
+        }
+        .his__prod-cont {
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="nav inner__nav profile__nav" id="navbar">
+        <div class="container">
+          <div class="nav__top">
+            <div class="nav__brand">
+              <a href="index.html">
+                <img src="./img/logo/Group 4.svg" class="nav__pic" alt="" />
+              </a>
+            </div>
+            <div class="nav__info">
+              <div class="nav__num">
+                <a href="tel:+99888900-3-009"
+                  ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+                >
+              </div>
+              <div class="nav__reg">
+                <button class="nav__btn" id="reg-button">
+                  <p>Регистрироваться</p>
+                </button>
+              </div>
+              <div class="nav__cart">
+                <a href="#" class="cart__link">
+                  <i class="bx bx-cart-alt"></i>
+                </a>
+                <p class="cart__num">23</p>
+              </div>
+              <div class="nav__profile">
+                <a href="#">
+                  <p class="nav__pro-name">Antonio Conte</p>
+                  <div class="nav__pro-img">
+                    <img src="./img/conte.jpg" alt="" class="nav__pro-pic" />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="nav__bottom">
+            <div class="nav__links">
+              <ul>
+                <li>
+                  <a href="index.html" class="nav__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="products.html" class="nav__link"> Оборудование </a>
+                </li>
+                <li class="drop-btn rotater">
+                  <a href="materials.html" class="nav__link">
+                    Расходные материалы <i class="bx bx-chevron-down"></i>
+                  </a>
+                  <div class="dropdown next__lang" id="drop">
+                    <a href="#" class="drop__link">
+                      Анализ кислорода, азота и водорода
+                    </a>
+                    <a href="#" class="drop__link"> Анализ углерода и серы </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="contacts.html" class="nav__link"> Контакты </a>
+                </li>
+                <li class="drop-btn">
+                  <a href="#" class="nav__link menu-icon">
+                    <i class="bx bx-menu"></i>
+                  </a>
+                  <div class="dropdown next__lang menu__drop" id="drop">
+                    <a href="#" class="drop__link"> Проекты </a>
+                    <a href="about.html" class="drop__link"> О нас </a>
+                    <a href="posts.html" class="drop__link"> Новости</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="nav__right">
+              <div class="nav__search">
+                <input id="search" type="text" placeholder="Поиск" />
+                <label class="search__label" for="search"
+                  ><i class="bx bx-search"></i
+                ></label>
+              </div>
+              <div class="nav__lang drop-btn rotater">
+                <p class="current__lang">
+                  Русский <i class="bx bx-chevron-down"></i>
+                </p>
+                <div class="next__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="mobile inner__mobile" id="mobile">
+        <div class="container">
+          <div class="mobile__top">
+            <div class="mobile__brand">
+              <a href="#">
+                <img src="./img/logo/Group 4.svg" alt="" />
+              </a>
+            </div>
+            <div class="mobile__right">
+              <div class="mobile__search-wrap">
+                <button class="mobile__search" id="searcher">
+                  <i class="bx bx-search"></i>
+                </button>
+              </div>
+              <div class="burger">
+                <button class="burger__btn" id="burger">
+                  <div class="stick"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile__bottom" id="bottom">
+          <div class="mobile__wrapper">
+            <div class="mobile__header">
+              <div class="mobile__brand">
+                <a href="#">
+                  <img
+                    src="./img/logo/Group 4.svg"
+                    class="mobile__pic"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="mobile__x">
+                <button class="x__japan" id="x-japan">
+                  <i class="bx bx-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mobile__links">
+              <ul class="active__ul show-ul" id="active-ul">
+                <p class="ul__title">Меню</p>
+                <li>
+                  <a href="#" class="mobile__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Оборудование </a>
+                </li>
+                <li>
+                  <button class="mobile__link" id="opener">
+                    Расходные материалы
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Контакты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Проекты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> О нас </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Новости </a>
+                </li>
+              </ul>
+              <ul class="hidden__ul hide-ul" id="hidden-ul">
+                <li>
+                  <button class="mobile__link" id="closer">
+                    <i class="bx bx-chevron-left"></i>
+                    Меню
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link">
+                    Анализ кислорода, азота и водорода
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Анализ углерода и серы </a>
+                </li>
+              </ul>
+              <div class="mobile__langs">
+                <div class="mobile__lang mobile__lang-active">
+                  <a href="#"> Русский </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> O’zbekcha </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="second__wrapper">
+            <div class="mobile__reg">
+              <button class="nav__btn"><p>Регистрироваться</p></button>
+            </div>
+            <div class="mobile__num nav__num">
+              <a href="tel:+99888900-3-009"
+                ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main inner">
+      <div class="container">
+        <div class="cart__header">
+          <h1 class="cart__title">Ваш профиль</h1>
+        </div>
+        <div class="row no__more" style="padding-bottom: 180px">
+          <div class="col-lg-3 col-xs-12 pro__left">
+            <div class="pro__info">
+              <div class="pro__img">
+                <div class="pro__img-wrap">
+                  <img src="./img/conte.jpg" alt="" class="pro__pic" />
+                  <div class="pro__img-delete">
+                    <button><i class="bx bx-x"></i></button>
+                  </div>
+                </div>
+                <div class="pro__img-btn">
+                  <button><i class="bx bx-camera"></i></button>
+                </div>
+              </div>
+              <div class="pro__content">
+                <p class="pro__name">Antonio</p>
+                <p class="pro__surname">Conte</p>
+              </div>
+              <div class="pro__links">
+                <p class="pro__current pro__link">
+                  Личные данные <i class="bx bx-user"></i>
+                </p>
+                <a href="#" class="next__link pro__link">
+                  Заказы <i class="bx bx-cart-alt"></i>
+                </a>
+              </div>
+              <div class="pro__exit">
+                <button class="exit__btn" id="exit-btn">Выход</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9 col-xs-12 pro__right">
+            <div class="edit">
+              <form>
+                <div class="edit__header" style="border-bottom: none">
+                  <h4 class="edit__title">История заказов</h4>
+                </div>
+                <div class="edit__body">
+                  <div class="history__body">
+                    <div class="history__header">
+                      <div class="his__header-left">
+                        <p class="his__hed-txt">
+                          Номер заказ: <strong>№ 105198</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Дата: <strong>31.08.2022</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Количество товаров: <strong> 4015 шт.</strong>
+                        </p>
+                      </div>
+                      <div class="his__hed-right">
+                        <button prevent="default" class="his__hed-btn">
+                          Одобрено
+                        </button>
+                        <div class="his__hed-arrow">
+                          <i class="bx bx-chevron-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="his__mid active">
+                      <div class="kurwa">
+                        <p class="kurwa__title">Информация о заказе</p>
+                      </div>
+                      <div class="his__prod">
+                        <div class="his__prod-img">
+                          <img
+                            src="./img/prod-1.png"
+                            alt=""
+                            class="his__prod-pic"
+                          />
+                        </div>
+                        <div class="his__prod-cont">
+                          <p class="his__prod-sup">Газопоршневая</p>
+                          <h4 class="his__prod-title">
+                            Премьер-Альфа-Гидравлик
+                          </h4>
+                        </div>
+                        <div class="his__prod-count">
+                          <p class="goodboy">Количество: 5 шт.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="history__body">
+                    <div class="history__header">
+                      <div class="his__header-left">
+                        <p class="his__hed-txt">
+                          Номер заказ: <strong>№ 105198</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Дата: <strong>31.08.2022</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Количество товаров: <strong> 4015 шт.</strong>
+                        </p>
+                      </div>
+                      <div class="his__hed-right">
+                        <button class="his__hed-btn waiting">В ожидании</button>
+                        <div class="his__hed-arrow">
+                          <i class="bx bx-chevron-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="his__mid">
+                      <div class="kurwa">
+                        <p class="kurwa__title">Информация о заказе</p>
+                      </div>
+                      <div class="his__prod">
+                        <div class="his__prod-img">
+                          <img
+                            src="./img/prod-1.png"
+                            alt=""
+                            class="his__prod-pic"
+                          />
+                        </div>
+                        <div class="his__prod-cont">
+                          <p class="his__prod-sup">Газопоршневая</p>
+                          <h4 class="his__prod-title">
+                            Премьер-Альфа-Гидравлик
+                          </h4>
+                        </div>
+                        <div class="his__prod-count">
+                          <p class="goodboy">Количество: 5 шт.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="history__body">
+                    <div class="history__header">
+                      <div class="his__header-left">
+                        <p class="his__hed-txt">
+                          Номер заказ: <strong>№ 105198</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Дата: <strong>31.08.2022</strong>
+                        </p>
+                        <p class="his__hed-txt">
+                          Количество товаров: <strong> 4015 шт.</strong>
+                        </p>
+                      </div>
+                      <div class="his__hed-right">
+                        <button class="his__hed-btn reject">Отменено</button>
+                        <div class="his__hed-arrow">
+                          <i class="bx bx-chevron-down"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="his__mid">
+                      <div class="kurwa">
+                        <p class="kurwa__title">Информация о заказе</p>
+                      </div>
+                      <div class="his__prod">
+                        <div class="his__prod-img">
+                          <img
+                            src="./img/prod-1.png"
+                            alt=""
+                            class="his__prod-pic"
+                          />
+                        </div>
+                        <div class="his__prod-cont">
+                          <p class="his__prod-sup">Газопоршневая</p>
+                          <h4 class="his__prod-title">
+                            Премьер-Альфа-Гидравлик
+                          </h4>
+                        </div>
+                        <div class="his__prod-count">
+                          <p class="goodboy">Количество: 5 шт.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="foot__grid">
+          <div class="foot__item">
+            <a href="#" class="foot__brand-link">
+              <img
+                src="./img/logo/brand-color.svg"
+                alt=""
+                class="foot__brand"
+              />
+            </a>
+
+            <div class="foot__socs">
+              <p>Мы в социальных сетях</p>
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot__info">
+              <p>Copyright © 2022</p>
+              <p>Все права защищены.</p>
+            </div>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Меню</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Проекты </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Оборудование </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Расходные материалы </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> О нас </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Новости </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Контакты </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Услуги</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Премьер-Альфа-Гидравлик </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бесшовная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба электросварная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба нержавеющая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба крекинговая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бурильная </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Контакты</p>
+            <div class="foot__con-item">
+              <i class="bx bx-map"></i>
+              <a href="">100130, Узбекистан, г. Ташкент</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-phone-call"></i>
+              <a href="tel:+998997777777">+998 99 777-77-77</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-envelope"></i>
+              <a href="mailto:info@gmail.com">info@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="exit__modal" id="exit-modal">
+      <div class="exit__wrapper">
+        <div class="exit__body">
+          <div class="exit__X">
+            <button class="exit__x" id="exit__x">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="exit__img">
+            <img src="./img/logo/exit.svg" alt="" class="exit__pic" />
+          </div>
+          <p class="exit__txt">Вы уверены, что хотите выйти?</p>
+          <div class="exit__btns">
+            <button class="yes__btn">Выход</button>
+            <button class="no__btn">Нет, не хочу!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="./js/app.js"></script>
+    <script>
+      const catalogueContainers = document.querySelectorAll(".his__mid");
+      const buttons = document.querySelectorAll(".history__header");
+
+      buttons.forEach((btn, i) => {
+        btn.addEventListener("click", () => {
+          catalogueContainers.forEach((catalogue) => {
+            catalogue.classList.remove("active");
+          });
+          buttons.forEach((btn) => {
+            btn.classList.remove("active");
+          });
+
+          catalogueContainers[i].classList.add("active");
+          buttons[i].classList.add("active");
+          links[i].classList.add("active");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>ABM Lab</title>
+  </head>
+  <body>
+    <header>
+      <nav class="nav inner__nav" id="navbar">
+        <div class="container">
+          <div class="nav__top">
+            <div class="nav__brand">
+              <a href="index.html">
+                <img src="./img/logo/Group 4.svg" class="nav__pic" alt="" />
+              </a>
+            </div>
+            <div class="nav__info">
+              <div class="nav__num">
+                <a href="tel:+99888900-3-009"
+                  ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+                >
+              </div>
+              <div class="nav__reg">
+                <button class="nav__btn" id="reg-button">
+                  <p>Регистрироваться</p>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="nav__bottom">
+            <div class="nav__links">
+              <ul>
+                <li>
+                  <a href="index.html" class="nav__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="products.html" class="nav__link"> Оборудование </a>
+                </li>
+                <li class="drop-btn rotater">
+                  <a href="materials.html" class="nav__link">
+                    Расходные материалы <i class="bx bx-chevron-down"></i>
+                  </a>
+                  <div class="dropdown next__lang" id="drop">
+                    <a href="#" class="drop__link">
+                      Анализ кислорода, азота и водорода
+                    </a>
+                    <a href="#" class="drop__link"> Анализ углерода и серы </a>
+                  </div>
+                </li>
+                <li>
+                  <a href="contacts.html" class="nav__link"> Контакты </a>
+                </li>
+                <li class="drop-btn">
+                  <a href="#" class="nav__link menu-icon">
+                    <i class="bx bx-menu"></i>
+                  </a>
+                  <div class="dropdown next__lang menu__drop" id="drop">
+                    <a href="#" class="drop__link"> Проекты </a>
+                    <a href="about.html" class="drop__link"> О нас </a>
+                    <a href="posts.html" class="drop__link"> Новости</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="nav__right">
+              <div class="nav__search">
+                <input id="search" type="text" placeholder="Поиск" />
+                <label class="search__label" for="search"
+                  ><i class="bx bx-search"></i
+                ></label>
+              </div>
+              <div class="nav__lang drop-btn rotater">
+                <p class="current__lang">
+                  Русский <i class="bx bx-chevron-down"></i>
+                </p>
+                <div class="next__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <nav class="mobile inner__mobile" id="mobile">
+        <div class="container">
+          <div class="mobile__top">
+            <div class="mobile__brand">
+              <a href="#">
+                <img src="./img/logo/Group 4.svg" alt="" />
+              </a>
+            </div>
+            <div class="mobile__right">
+              <div class="mobile__search-wrap">
+                <button class="mobile__search" id="searcher">
+                  <i class="bx bx-search"></i>
+                </button>
+              </div>
+              <div class="burger">
+                <button class="burger__btn" id="burger">
+                  <div class="stick"></div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="mobile__bottom" id="bottom">
+          <div class="mobile__wrapper">
+            <div class="mobile__header">
+              <div class="mobile__brand">
+                <a href="#">
+                  <img
+                    src="./img/logo/Group 4.svg"
+                    class="mobile__pic"
+                    alt=""
+                  />
+                </a>
+              </div>
+              <div class="mobile__x">
+                <button class="x__japan" id="x-japan">
+                  <i class="bx bx-x"></i>
+                </button>
+              </div>
+            </div>
+            <div class="mobile__links">
+              <ul class="active__ul show-ul" id="active-ul">
+                <p class="ul__title">Меню</p>
+                <li>
+                  <a href="#" class="mobile__link"> Главная </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Оборудование </a>
+                </li>
+                <li>
+                  <button class="mobile__link" id="opener">
+                    Расходные материалы
+                    <i class="bx bx-chevron-right"></i>
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Контакты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Проекты </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> О нас </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Новости </a>
+                </li>
+              </ul>
+              <ul class="hidden__ul hide-ul" id="hidden-ul">
+                <li>
+                  <button class="mobile__link" id="closer">
+                    <i class="bx bx-chevron-left"></i>
+                    Меню
+                  </button>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link">
+                    Анализ кислорода, азота и водорода
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="mobile__link"> Анализ углерода и серы </a>
+                </li>
+              </ul>
+              <div class="mobile__langs">
+                <div class="mobile__lang mobile__lang-active">
+                  <a href="#"> Русский </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> O’zbekcha </a>
+                </div>
+                <div class="mobile__lang">
+                  <a href="#"> English </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="second__wrapper">
+            <div class="mobile__reg">
+              <button class="nav__btn"><p>Регистрироваться</p></button>
+            </div>
+            <div class="mobile__num nav__num">
+              <a href="tel:+99888900-3-009"
+                ><i class="bx bx-phone-call"></i>+998 88 900-3-009</a
+              >
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main inner cart__inner">
+      <div class="container">
+        <div class="cart__header">
+          <h1 class="cart__title">Корзина (3)</h1>
+          <button class="reset__cart">ОЧИСТИТЬ КОРЗИНУ</button>
+        </div>
+
+        <div class="row">
+          <div class="col-md-9 col-xs-12 cart__items">
+            <div class="cart__item">
+              <div class="cart__img">
+                <img src="./img/prod-1.png" alt="" class="cart__pic" />
+              </div>
+              <div class="cart__content">
+                <p class="cart__type">Газопоршневая</p>
+                <h4 class="cart__name">Премьер-Альфа-Гидравлик</h4>
+              </div>
+              <div class="cart__counter">
+                <button class="cart__btn minus">
+                  <i class="bx bx-minus"></i>
+                </button>
+                <p class="cart__num">4</p>
+                <button class="cart__btn plus">
+                  <i class="bx bx-plus"></i>
+                </button>
+              </div>
+              <div class="cart__delete">
+                <button class="cart__delete-btn">
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
+            </div>
+            <div class="cart__item">
+              <div class="cart__img">
+                <img src="./img/prod-2.png" alt="" class="cart__pic" />
+              </div>
+              <div class="cart__content">
+                <p class="cart__type">Газопоршневая</p>
+                <h4 class="cart__name">Премьер-Альфа-Гидравлик</h4>
+              </div>
+              <div class="cart__counter">
+                <button class="cart__btn minus">
+                  <i class="bx bx-minus"></i>
+                </button>
+                <p class="cart__num">4</p>
+                <button class="cart__btn plus">
+                  <i class="bx bx-plus"></i>
+                </button>
+              </div>
+              <div class="cart__delete">
+                <button class="cart__delete-btn">
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3 col-xs-12">
+            <div class="cart__info">
+              <div class="cart__info-header">
+                <p class="cart__count">Товаров в корзине:</p>
+                <p class="cart__amount">45 шт</p>
+              </div>
+              <button onclick="location.href='/order.html'" class="cart__order">
+                Оформить заказ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="foot__grid">
+          <div class="foot__item">
+            <a href="#" class="foot__brand-link">
+              <img
+                src="./img/logo/brand-color.svg"
+                alt=""
+                class="foot__brand"
+              />
+            </a>
+
+            <div class="foot__socs">
+              <p>Мы в социальных сетях</p>
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="foot__info">
+              <p>Copyright © 2022</p>
+              <p>Все права защищены.</p>
+            </div>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Меню</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Проекты </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Оборудование </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Расходные материалы </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> О нас </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Новости </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Контакты </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Услуги</p>
+            <ul class="foot__list">
+              <li>
+                <a href="#" class="foot__link"> Премьер-Альфа-Гидравлик </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бесшовная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба электросварная </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба нержавеющая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба крекинговая </a>
+              </li>
+              <li>
+                <a href="#" class="foot__link"> Труба бурильная </a>
+              </li>
+            </ul>
+          </div>
+          <div class="foot__item">
+            <p class="foot__title">Контакты</p>
+            <div class="foot__con-item">
+              <i class="bx bx-map"></i>
+              <a href="">100130, Узбекистан, г. Ташкент</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-phone-call"></i>
+              <a href="tel:+998997777777">+998 99 777-77-77</a>
+            </div>
+            <div class="foot__con-item">
+              <i class="bx bx-envelope"></i>
+              <a href="mailto:info@gmail.com">info@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="search__body" id="search-body">
+      <div class="search__x mobile__x">
+        <button class="x__japan" id="x-search">
+          <i class="bx bx-x"></i>
+        </button>
+      </div>
+      <div class="search__mid">
+        <div class="search__logo">
+          <img src="./img/logo/Group 4.svg" alt="" />
+        </div>
+        <div class="search__input-wrap">
+          <form>
+            <input type="text" class="search__inputter" />
+            <button class="searcher__btn">
+              <i class="bx bx-search"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <section class="reg__modal" id="reg-modal">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Добро пожаловать в</h4>
+              <div class="reg__img">
+                <img src="./img/logo/Group 4.svg" alt="" class="reg__logo" />
+              </div>
+              <p class="reg__txt">
+                Заполните все необходимые поля для входа в аккаунт или
+                зарегистрируйте если его нет
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab" data-target="#login">
+                Логин
+              </button>
+              <p class="sticc">|</p>
+              <button class="reg__tabber" data-target="#registration">
+                Регистрация
+              </button>
+            </div>
+            <div class="reg__mid active__tab" id="login" data-content>
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="email" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="password" />
+                  <label
+                    alt="Введите Пароль"
+                    placeholder="Введите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="forget">
+                  <div id="forget-btn" class="forget__pass">Забыли пароль</div>
+                </div>
+                <button class="reg__btn">Логин</button>
+              </form>
+            </div>
+            <div class="reg__mid" id="registration" data-content>
+              <form>
+                <p class="form__info">Введите личный данные</p>
+                <div class="input__wrapper">
+                  <input required="" type="number" />
+                  <label alt="Имя" placeholder="Имя"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Фамилия" placeholder="Фамилия"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Отчество" placeholder="Отчество"></label>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label alt="Пароль" placeholder="Пароль"></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="check__wrap">
+                  <input type="checkbox" id="check" />
+                  <label for="check"
+                    >Я согласен со всеми заявлениями об
+                    <a href="rules">условиях обслуживания</a></label
+                  >
+                </div>
+                <button class="reg__btn">Логин</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reg__modal reg__modal-forget" id="reg-modal-forget">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg-forget">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Вы забыли свой пароль?</h4>
+              <p class="reg__txt">
+                Введите адрес электронной почты, который вы используете для
+                своей учетной записи, ниже, и мы вышлем вам ссылку для сброса
+                пароля.
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab">Забыли пароль?</button>
+            </div>
+            <div class="reg__mid active__tab" id="login">
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Электронная почта"
+                    placeholder="Электронная почта"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/mail.svg" alt="" />
+                  </div>
+                </div>
+                <button class="reg__btn">Отправить</button>
+                <p class="return" id="return">
+                  Вернуться к <a href="#" class="purple">регистрации</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="reg__modal reg__modal-forget reg__restore" id="">
+      <div class="reg__wrapper">
+        <div class="reg__body">
+          <div class="reg__x">
+            <button class="x__japan" id="x-reg-forget">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+          <div class="reg__left">
+            <div class="reg__info">
+              <h4 class="reg__title">Мы ждём вас!</h4>
+              <p class="reg__txt">
+                Заполните все необходимые поля для входа в аккаунт или
+                зарегистрируйте если его нет
+              </p>
+            </div>
+            <div class="reg__socs">
+              <div class="socs__flex">
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-facebook"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-instagram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-telegram"></i>
+                </a>
+                <a href="#" class="soc__link">
+                  <i class="bx bxl-youtube"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="reg__right">
+            <div class="reg__header">
+              <button class="reg__tabber active__tab">
+                Восстановить свой пароль
+              </button>
+            </div>
+            <div class="reg__mid active__tab" id="login">
+              <form>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Введите Пароль"
+                    placeholder="Введите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <div class="input__wrapper">
+                  <input required="" type="text" />
+                  <label
+                    alt="Повторите Пароль"
+                    placeholder="Повторите Пароль"
+                  ></label>
+                  <div class="input__after">
+                    <img src="./img/logo/eye.svg" alt="" />
+                  </div>
+                </div>
+                <button class="reg__btn">Восстановить пароль</button>
+                <p class="return" id="return">
+                  Вернуться к <a href="#" class="purple">регистрации</a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
